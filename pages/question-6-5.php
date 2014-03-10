@@ -2,10 +2,12 @@
 <?php
 $employee_name = $_POST['employee_name'];
 //if(!isset($employee_name)) {
+	print "<div class='row col-sm-12'>";
 	print "<form action='index.php?question=6-5' method='post'/>";
 	print "<label for='employee_name'>Person name</label>";
 	print "<input type='text' name='employee_name'/>";
 	print "</form>";
+	print "</div>";
 //	return;
 //}
 ?>
