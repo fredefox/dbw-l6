@@ -1,11 +1,22 @@
+<?php
+$company_name = $_POST['company_name'];
+if(!isset($company_name)) {
+	print "<form action='index.php?page=q6.3' method='post'/>";
+	print "<label for='company_name'>Company name</label>";
+	print "<input type='text' name='company_name'/>";
+	print "</form>";
+	return;
+}
+?>
+
 <table>
 <tr>
 	<th>Employee</th>
 	<th>Salary</th>
 	<th>Company</th>
 </tr>
+
 <?php
-$company_name = $_GET['company_name'];
 $query = "SELECT * ";
 $query .= "FROM works ";
 $query .= "WHERE company_name = ?";
