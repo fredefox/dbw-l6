@@ -8,23 +8,15 @@ include("db.php");
 ?>
 </head>
 <body>
-<table>
 <?php
-foreach($DB->query("SELECT * FROM employee") as $row) {
-	// I wanted to use something like join on the resulting array
-	// to only automatically write all the html
-	// PDO::query unfortunately returns an array with duplicate values
-	// Example: array("0" -> "value", "key" -> "value");
-	$employee_name = $row[0];
-	$street = $row[1];
-	$city = $row[2];
-	print "<tr>";
-	print "<td>$employee_name</td>";
-	print "<td>$street</td>";
-	print "<td>$city</td>";
-	print "</tr>";
+$questions = array("q6.1", "q6.2", "q6.3", "q6.4", "q6.5");
+foreach($questions as $q) {
+	print "<div><a href='index.php?page=$q'>Question $q</a></div>";
+}
+$page = $_GET['page'];
+if(isset($page)) {
+	print "<h1>Showing question $page</h1>";
+	include("pages/$page.php");
 }
 ?>
-</table>
-</body>
-</html>
+
