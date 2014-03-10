@@ -1,4 +1,9 @@
-<table>
+<table class='table'>
+<tr>
+	<th>Employee</th>
+	<th>Street</th>
+	<th>City</th>
+</tr>
 <?php
 foreach($DB->query("SELECT * FROM employee") as $row) {
 	// I wanted to use something like join on the resulting array

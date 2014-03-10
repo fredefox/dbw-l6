@@ -9,7 +9,7 @@ if(!isset($company_name)) {
 }
 ?>
 
-<table>
+<table class='table'>
 <tr>
 	<th>Employee</th>
 	<th>Salary</th>
