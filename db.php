@@ -1,21 +1,9 @@
 <?php
-// Connects to the XE service (i.e. database) on the "localhost" machine
-$conn = oci_connect('fjh318', 'welcome', 'localhost/XE');
-if (!$conn) {
-    $e = oci_error();
-    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+try {
+	$DB = new PDO('oci:dbname=//localhost:1521/dbwc', DB_USER, DB_PASS);
+} catch (PDOException $e) {
+	include("error.php");
+	exit(1);
 }
-
-$stid = oci_parse($conn, 'SELECT * FROM employees');
-oci_execute($stid);
-
-echo "<table border='1'>\n";
-while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
-    echo "<tr>\n";
-    foreach ($row as $item) {
-        echo "    <td>" . ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;") . "</td>\n";
-    }
-    echo "</tr>\n";
-}
-echo "</table>\n";
 ?>
+
