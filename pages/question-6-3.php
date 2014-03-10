@@ -1,7 +1,8 @@
+<p>Write a PHP script that pretty prints the employees of a company given a company name.</p>
 <?php
 $company_name = $_POST['company_name'];
 if(!isset($company_name)) {
-	print "<form action='index.php?page=q6.3' method='post'/>";
+	print "<form action='index.php?question=6-3' method='post'/>";
 	print "<label for='company_name'>Company name</label>";
 	print "<input type='text' name='company_name'/>";
 	print "</form>";

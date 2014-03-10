@@ -1,3 +1,4 @@
+<p>Write a PHP script that prints a list of employees. All the information (all attributes) should be presented in a HTML Table.</p>
 <table class='table'>
 <tr>
 	<th>Employee</th>
